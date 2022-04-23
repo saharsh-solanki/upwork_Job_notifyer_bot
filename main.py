@@ -8,7 +8,6 @@ obj = Scraper.UpworkScraper()
 import os
 
 Bot_Token = os.environ.get("BOT_TOKEN")
-# Bot_Token = "5365649147:AAFGLeILBN6xmwLvqN_l31EfRniGFOkc-Ig"
 
 bot = telebot.TeleBot(Bot_Token, parse_mode=None)  # You can set parse_mode by default. HTML or MARKDOWN
 
