@@ -48,11 +48,10 @@ def proccess_job(message):
     chat_id = message.chat.id
     check = message.text
     all_jobs = []
-    fetched = obj.FetchJobs()
     run = True
     try:
         while run:
-
+            fetched = obj.FetchJobs()
             try:
                 if fetched == False:
                     return False
@@ -78,7 +77,7 @@ def proccess_job(message):
                         except:
                             pass
 
-                        messgae = f" JOB NUMBER :- {len(all_jobs) + 1} \n New Got Arrived : - {title} \n Job Description:- { description } \n Payment : {payment_text} \n Client's Budget : ${budget} "
+                        messgae = f" JOB NUMBER :- {len(all_jobs) + 1} \n New Job Arrived : - {title} \n Job Description:- { description } \n Payment : {payment_text} \n Client's Budget : ${budget} "
                         bot.send_message(chat_id, messgae)
                         all_jobs.append(i["title"])
                         send = True

@@ -69,6 +69,8 @@ class UpworkScraper:
         response = requests.request("GET", url, headers=headers, data=payload)
         try:
             response = response.json()
+            if type(response) == str:
+                return  False
             return response
         except:
             return False
