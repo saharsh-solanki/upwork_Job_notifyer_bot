@@ -32,30 +32,6 @@ class UpworkScraper:
     def CloseBrowser(self):
         self.driver.quit()
 
-
-    # def GenerateCookieFile(self):
-    #     cookies = self.driver.get_cookies()
-    #     CookieToBeWrite = ""
-    #     file = open("cookies.txt", "w")
-    #     cookie = ""
-    #     for cookie in cookies:
-    #         CookieToBeWrite = CookieToBeWrite + str(cookie["name"] + "=" + cookie["value"] + ";")
-    #         # file.write( CookieToBeWrite)
-    #         cookie += CookieToBeWrite
-    #     file.write("'"+cookie+"'")
-    #     file.close()
-    #     self.cookie = True
-    #     print("Cookie Generated Successfully")
-
-    # def setAndCheckCookie(self):
-    #     files = open("cookies.txt", "r")
-    #     cookie = files.read()
-    #     if cookie:
-    #         self.cookie_data = cookie
-    #         return True
-    #     else:
-    #         return False
-
     def GetCookie(self):
         return self.cookie_data
 
@@ -63,7 +39,7 @@ class UpworkScraper:
         self.cookie_data = cooki
 
     def FetchJobs(self):
-        url = "https://www.upwork.com/ab/find-work/api/feeds/embeddings-recommendations?paging=0%3B10"
+        url = "https://www.upwork.com/ab/find-work/api/feeds/embeddings-recommendations"
         payload = {}
         headers = self.GetHeader()
         response = requests.request("GET", url, headers=headers, data=payload)

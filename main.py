@@ -60,7 +60,7 @@ def proccess_job(message):
                 for i in jobs:
                     if i["title"] not in all_jobs:
                         title = i['title'] if "title" in i else ""
-                        description = i["description"]  if "description" in i else ""
+                        description = i["description"][:500]  if "description" in i else ""
                         payment_text = "Not Verified"
                         budget = 0
                         if "client" in i:
